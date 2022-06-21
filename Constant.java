@@ -1,0 +1,17 @@
+public class Constant{
+    public String showNames = "a";
+    public String randomName = "r";
+    public String addName = "+";
+    public String query = "?";
+    public String countWords = "c";
+    public String dataLoad = "Loading data ...";
+    public String dataLoaded = "Data loaded.";
+    public String wordsFound = " word(s) found";
+    public String Error = "Invalid input";
+    public String FileNmae = "students.txt";
+    public String split = ", ";
+    public String Found = "We found it!";
+    public String notFound = "Not found!";
+    public String lastUpdate = "\nList last updated on ";
+    public String dateFormat = "dd/mm/yyyy-hh:mm:ss a";
+}
