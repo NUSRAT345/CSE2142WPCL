@@ -8,6 +8,8 @@ public class StudentList {
 	public static Constant constant = new Constant();
 
 	public static void ReadNames(){
+
+	// Reading the text from.student.txt
 		try {
 			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(constant.FileNmae)));
 			studentNames = bufferedReader.readLine();
@@ -18,6 +20,8 @@ public class StudentList {
 	}
 
 	public static void Write(String updateText){
+
+		//Writing the update text
 		try {
 			BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(constant.FileNmae, false));
 			bufferedWriter.flush();
@@ -29,13 +33,16 @@ public class StudentList {
 	}
 	public static void main(String[] args) {
 
-//		Check arguments
+		//Check arguments
 		if (args.length != 1) {
+
+        //For invalid input format
 			System.out.println(constant.Error);
 			System.exit(1);
 		}
 		if(args[0].equals(constant.showNames)) {
 
+			//Display all students name
 			System.out.println(constant.dataLoad);
 			ReadNames();
 			for(String name : names) {
@@ -45,6 +52,7 @@ public class StudentList {
         }
 		else if(args[0].equals(constant.randomName)) {
 
+			//Display a random student name
 			System.out.println(constant.dataLoad);
 			ReadNames();
 			Random random = new Random();
@@ -53,6 +61,7 @@ public class StudentList {
 		}
 		else if(args[0].contains(constant.addName)){
 
+			//Adding a new name to the list
 			System.out.println(constant.dataLoad);
 			ReadNames();
 			studentNames = studentNames + constant.split + args[0].substring(1);
@@ -62,6 +71,7 @@ public class StudentList {
 		}
 		else if(args[0].contains(constant.query)) {
 
+			//Searching for a student in the list
 			System.out.println(constant.dataLoad);
 			ReadNames();
 			for(int idx = 0; idx<names.length; idx++) {
@@ -75,12 +85,15 @@ public class StudentList {
         }
 		else if(args[0].contains(constant.countWords)) {
 
+			//Counting the number of student names
 			System.out.println(constant.dataLoad);
 			ReadNames();
 			System.out.println(names.length + constant.wordsFound);
 			System.out.println(constant.dataLoaded);
 		}
 		else {
+
+			//For invalid input format
 			System.out.println(constant.Error);
 		}
 	}
